@@ -6,7 +6,7 @@
 #include "GameFramework/Character.h"
 #include "RobotCharacterBase.generated.h"
 
-UCLASS()
+UCLASS(Abstract)
 class ROBOTGAME_API ARobotCharacterBase : public ACharacter
 {
 	GENERATED_BODY()
@@ -19,5 +19,7 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	TObjectPtr<USkeletalMeshComponent> Weapon;
 
 };
